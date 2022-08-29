@@ -1,0 +1,43 @@
+{% extends 'Home.html' %}
+{% block content %}
+
+<h4>Thêm tiết DG-TG</h4>
+
+<form action="addrecordKHDHTG/" method="post">
+{% csrf_token %}
+Họ tên:<br>
+<input name="hoTen">
+<br>
+Tổ CM:<br>
+<select name="toCM">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+<br>
+Ngày dạy:<br>
+<input name="ngayDay">
+<br>
+Tên bài dạy:<br>
+<input name="tenBai">
+<br>
+  Lớp:<br>
+<input name="lop">
+<br>
+Lượt dự:<br>
+<input name="luotDu">
+<br>
+  Loại:<br>
+<input name="loai">
+<br>
+Xếp loại:<br>
+<input name="xepLoai">
+<br>
+ Phụ chú:<br>
+<input name="phuChu">
+<br><br>
+<input type="submit" value="Hoàn thành thêm tiết dự giờ">
+</form>
+
+{% endblock %}

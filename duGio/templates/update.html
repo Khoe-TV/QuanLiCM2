@@ -1,0 +1,23 @@
+{% extends 'Home.html' %}
+{% block content %}
+<h3>Chỉnh sửa - Cập nhật</h3>
+
+<form action="updaterecord/{{ mymember.id }}" method="post">
+{% csrf_token %}
+Họ tên:<br>
+<input name="hoTen" value="{{ mymember.hoTen }}">
+<br><br>
+Tổ CM:<br>
+<input name="toCM" value="{{ mymember.toCM }}">
+<br><br>
+Ngày dự:<br>
+<input name="ngayDu" value="{{ mymember.ngayDu }}">
+<br><br>
+Phụ chú:<br>
+<input name="phuChu" value="{{ mymember.phuChu }}">
+<br><br>
+<input type="submit" value="Hoàn thành">
+</form>
+
+{% endblock %}
+

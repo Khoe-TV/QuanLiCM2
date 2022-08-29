@@ -1,0 +1,32 @@
+{% extends 'Home.html' %}
+{% block content %}
+<h3>Chỉnh sửa - Cập nhật</h3>
+
+<form action="updaterecordKHDGTG/{{ mymember.id }}" method="post">
+{% csrf_token %}
+
+GV dạy:<br>
+<input name="hoTen" value="{{ mymember.hoTen }}"><br>
+Tổ CM:<br>
+<input name="toCM" value="{{ mymember.toCM }}"><br>
+Ngày dạy:<br>
+<input name="ngayDay" value="{{ mymember.ngayDay }}"><br>
+Tên bài:<br>
+<input name="tenBai" value="{{ mymember.tenBai }}"><br>
+Lớp:<br>
+<input name="lop" value="{{ mymember.lop }}"><br>
+Lượt dự:<br>
+<input name="luotDu" value="{{ mymember.luotDu }}"><br>
+Loại:<br>
+<input name="loai" value="{{ mymember.loai }}"><br>
+Xếp loại:<br>
+<input name="xepLoai" value="{{ mymember.xepLoai }}"><br>
+Phụ chú:<br>
+<input name="phuChu" value="{{ mymember.phuChu }}"><br>
+
+<br>
+<input type="submit" value="Hoàn thành">
+</form>
+
+{% endblock %}
+

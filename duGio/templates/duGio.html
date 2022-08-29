@@ -1,0 +1,44 @@
+{% extends 'Home.html' %}
+{% block content %}
+<style type="text/css">
+	.form{
+		background-color:aquamarine; font-size:16px; margin-left:20px; padding-left:10px; width: 600px;
+	}
+	.tr_head{
+		font-weight: bold; color: #E904F7; background-color: #89D9F7;
+	}
+</style>
+
+
+<h4 style="text-align:center">Thống kê dự giờ - <a href="add/">Thêm tiết dự giờ</a></h4>
+<table class="table form table-hover">
+    <tr class="tr_head">
+        <th>STT</th>
+        <th>GV dự</th>
+        <th>Tổ CM</th>
+        <th>Ngày dự</th>
+        <th>Phụ chú</th>
+        <th>Xóa</th>
+    </tr>
+{% for x in mymembers %}
+
+<tr>
+    <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+    <td>{{ x.hoTen }}</td>
+    <td>{{ x.toCM }}</td>
+    <td>{{ x.ngayDu }}</td>
+    <td>{{ x.phuChu }}</td>
+    <td><a href="delete/{{ x.id }}">Xóa</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+
+<a href="sort1/">Thống kê tổ 1</a>
+<a href="sort2/">Thống kê tổ 2</a>
+<a href="sort3/">Thống kê tổ 3</a>
+<a href="sort4/">Thống kê tổ 4</a>
+</p>
+
+{% endblock %}

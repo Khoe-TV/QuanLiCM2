@@ -1,0 +1,51 @@
+{% extends 'Home.html' %}
+{% block content %}
+<style type="text/css">
+	.form{
+		background-color:aquamarine; font-size:16px; margin-left:20px; padding-left:10px;
+	}
+	.tr_head{
+		font-weight: bold; color: #E904F7; background-color: #89D9F7;
+	}
+</style>
+
+
+<h4 style="text-align:center">Theo dõi Dự giờ - Thao giảng - <a href="addKHDGTG/">Thêm tiết dạy</a></h4>
+<table class="table form table-hover">
+    <tr class="tr_head">
+        <th>STT</th>
+        <th>GV dạy</th>
+        <th>Tổ CM</th>
+        <th>Ngày dạy</th>
+        <th>Tên bài dạy</th>
+        <th>Lớp</th>
+        <th>Lượt dự</th>
+         <th>Loại</th>
+        <th>Xếp loại</th>
+        <th>Phụ chú</th>
+        <th>Xóa</th>
+    </tr>
+{% for x in mymembers %}
+
+<tr>
+    <td><a href="updateKHDGTG/{{ x.id }}">{{ x.id }}</a></td>
+    <td>{{ x.hoTen }}</td>
+    <td>{{ x.toCM }}</td>
+    <td>{{ x.ngayDay }}</td>
+    <td>{{ x.tenBai }}</td>
+    <td>{{ x.lop }}</td>
+    <td>{{ x.luotDu }}</td>
+    <td>{{ x.loai }}</td>
+    <td>{{ x.xepLoai }}</td>
+    <td>{{ x.phuChu }}</td>
+    <td><a href="deleteKHDGTG/{{ x.id }}">Xóa</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+
+<a href="sort/">Sap xep</a>
+</p>
+
+{% endblock %}
